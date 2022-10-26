@@ -1075,6 +1075,8 @@ If you want your policy to provide access to both secrets, simply specify an add
 
 **To use secrets manager with a replication instance in a private subnet**
 
+If your replication instance is on a private subnet or if you set the instance property `PubliclyAccessible` to `false`, it will not have a public ip address.  To provide the instance access to secrets manager in such a case, you will need a VPC endpoint.
+
 1. Create a secret manager VPC endpoint and note the DNS for the endpoint\. For more information about creating a secrets manager VPC endpoint, see [Connecting to Secrets Manager through a VPC endpoint](https://docs.aws.amazon.com/secretsmanager/latest/userguide/vpc-endpoint-overview.html#vpc-endpoint) []()in the *AWS Secrets Manager User Guide\.*
 
 1. Attach the replication instance security group to the secret manager VPC endpoint\.
